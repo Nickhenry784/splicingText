@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.lilianagibson.splicingleetter">
+  package="com.amazon.lilianagibson.riptextgameggpro">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.vending.BILLING" />
 
     <application
       android:name=".MainApplication"
@@ -9,6 +10,12 @@
       android:icon="@mipmap/ic_launcher"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+        <receiver android:name = "com.amazon.device.iap.ResponseReceiver"
+            android:permission = "com.amazon.inapp.purchasing.Permission.NOTIFY" >
+            <intent-filter>
+                <action android:name = "com.amazon.inapp.purchasing.NOTIFY" />
+            </intent-filter>
+        </receiver>
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"

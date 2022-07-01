@@ -71,7 +71,9 @@ const Play = ({navigation, route}) => {
         <Text style={appStyle.scoreText}>{`SCORE: ${score}`}</Text>
       </View>
       <View style={appStyle.centerView}>
-        <Text style={appStyle.xtext}>{text}</Text>
+        <ImageBackground source={images.panelText} style={appStyle.panelImage} >
+          <Text style={appStyle.xtext}>{text}</Text>
+        </ImageBackground>
         <Text style={appStyle.xtext}>{time}</Text>
         <TextInput
           style={appStyle.input}
@@ -81,14 +83,14 @@ const Play = ({navigation, route}) => {
       </View>
       <View style={appStyle.bottomView}>
         <TouchableOpacity onPress={onClickOkButton}>
-          <Image style={appStyle.centerImage} source={images.ok} />
+          <Image style={appStyle.centerImage} source={images.submit} />
         </TouchableOpacity>
         <TouchableOpacity onPress={onClickBackButton}>
           <Image style={appStyle.centerImage} source={images.back} />
         </TouchableOpacity>
       </View>
       {!play && <View style={appStyle.scoreView}>
-          <ImageBackground source={images.square} style={appStyle.scoreImage}>
+          <ImageBackground source={images.panelText} style={appStyle.scoreImage}>
             <Text style={appStyle.scoreText}>{`YOUR SCORE: ${score}`}</Text>
             <View style={appStyle.backView}>
               <TouchableOpacity onPress={onClickBackButton}>
@@ -127,6 +129,13 @@ export const appStyle = StyleSheet.create({
     width: windowWidth * 0.4,
     height: windowHeight * 0.1,
     resizeMode: 'contain',
+  },
+  panelImage: {
+    width: windowWidth * 0.8,
+    height: windowHeight * 0.4,
+    resizeMode: 'contain',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   xtext: {
     fontSize: windowWidth > 640 ? 70 : 50,
@@ -173,8 +182,8 @@ export const appStyle = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.6)',
   },
   scoreImage: {
-    width: windowWidth * 0.9,
-    height: windowHeight * 0.3,
+    width: windowWidth * 0.8,
+    height: windowHeight * 0.4,
     resizeMode: 'contain',
     alignItems: 'center',
     justifyContent: 'center',

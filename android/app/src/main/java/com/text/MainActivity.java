@@ -1,4 +1,4 @@
-package com.lilianagibson.splicingleetter;
+package com.amazon.lilianagibson.riptextgameggpro;
 
 import com.facebook.react.ReactActivity;
 

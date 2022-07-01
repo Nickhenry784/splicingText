@@ -52,10 +52,13 @@ const Home = () => {
           </View>
         </TouchableOpacity>
       </View>
-      <Text style={appStyle.labelText}>Splicing Text</Text>
+      <Text style={appStyle.labelText}>Rip Text</Text>
+      <ImageBackground source={images.panelText} style={appStyle.centerImage} >
+        <Image source={images.play} style={appStyle.backStyle} />
+      </ImageBackground>
       <View style={appStyle.bottomView}>
         <TouchableOpacity onPress={() => onClickStartButton()}>
-          <Image style={appStyle.centerImage} source={images.start} />
+          <Image style={appStyle.createButton} source={images.submit} />
         </TouchableOpacity>
       </View>
     </ImageBackground>
@@ -103,9 +106,11 @@ export const appStyle = StyleSheet.create({
     alignItems: 'center',
   },
   centerImage: {
-    width: windowWidth * 0.6,
-    height: windowWidth * 0.2,
+    width: windowWidth * 0.8,
+    height: windowHeight * 0.4,
     resizeMode: 'contain',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   scoreStyle: {
     width: windowWidth * 0.5,
@@ -120,9 +125,8 @@ export const appStyle = StyleSheet.create({
   labelText: {
     fontSize: windowWidth > 640 ? 60 : 40,
     color: 'white',
-    position: 'absolute',
-    top: '20%',
     fontFamily: 'MestizoFont',
+    marginBottom: 10,
   },
   buyImage: {
     width: windowWidth * 0.1,
@@ -140,6 +144,7 @@ export const appStyle = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    marginBottom: 20,
   },
   createButton: {
     width: windowWidth * 0.3,

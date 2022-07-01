@@ -1,4 +1,4 @@
-export const items = [
+export const subs = [
   {
     sku: 'leetter_50',
     value: 50,
